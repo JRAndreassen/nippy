@@ -1,10 +1,10 @@
 [package]
 name = "nippy"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2018"
 authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
 license = "MIT"
-description = "Async NTP"
+description = "Async NTP - async fork of ntp"
 repository = "https://github.com/apibillme/nippy"
 readme = "README.md"
 keywords = ["network", "time", "async", "ntp", "parser"]
