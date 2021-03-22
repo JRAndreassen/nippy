@@ -11,14 +11,32 @@
 
 The purpose of this library is to be your async ntp utility.
 
-This is a fork of the crate `ntp` that adds support for `async-std` and `Rust 2018`.
+This is a fork of the crate `ntp` that adds support for `async-std`, `tokio`, and `Rust 2018`.
+
+### Install
+
+#### async-std
+
+```toml
+
+nippy = "2"
+
+```
+
+#### Tokio
+
+```toml
+
+nippy = { version="2", default-features=false, features=["tokio-runtime"] }
+
+```
 
 ### Use
 
-``` rust
+```rust
 
 nippy::get_unix_ntp_time().await.unwrap();
 
 ```
 
-This will return an i64 that is the unix ntp timestamp from `pool ntp server`.
+This will return an `i64` that is the unix ntp timestamp from `pool ntp server`.

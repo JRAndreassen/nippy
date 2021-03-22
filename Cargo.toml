@@ -1,6 +1,6 @@
 [package]
 name = "nippy"
-version = "1.0.1"
+version = "2.0.0"
 edition = "2018"
 authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
 license = "MIT"
@@ -11,12 +11,25 @@ keywords = ["network", "time", "async", "ntp", "parser"]
 categories = ["date-and-time", "network-programming", "parser-implementations", "encoding"]
 
 [dependencies]
-async-std = { version = "1.9", features = ["attributes"] }
 byteorder = "1.4"
 conv = "0.3"
 custom_derive = "0.1"
 log = "0.4"
 anyhow = "1"
+
+[features]
+default = ["async-std"]
+async-std-runtime = ["async-std"]
+tokio-runtime = ["tokio"]
+
+[dependencies.async-std]
+version = "1.9"
+optional = true
+
+[dependencies.tokio]
+version = "1"
+optional = true
+features = ["net"]
 
 [dev-dependencies]
 chrono = "0.4"

@@ -1,17 +1,3 @@
-/*!
-# Example
-Shows how to use the ntp library to fetch the current time according
-to pool ntp server
-
-```rust
-extern crate nippy;
-
-#[async_std::main]
-async fn main() {
-    println!("{:?}", nippy::get_unix_ntp_time().await.unwrap());
-}
-```
-*/
 #![recursion_limit = "1024"]
 
 #[macro_use]
@@ -25,7 +11,12 @@ pub mod protocol;
 
 use protocol::{ReadBytes, ConstPackedSizeBytes, WriteBytes};
 use std::io;
+
+#[cfg(feature = "async-std")]
 use async_std::net::{ToSocketAddrs, UdpSocket};
+#[cfg(feature = "tokio")]
+use tokio::net::{ToSocketAddrs, UdpSocket};
+
 use anyhow::Result;
 use std::{self, time};
 
