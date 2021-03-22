@@ -1,20 +1,22 @@
 [package]
-name = "broker-ntp"
-version = "0.0.1"
+name = "nippy"
+version = "1.0.0"
+edition = "2018"
 authors = ["Bevan Hunt <bevan@bevanhunt.com>"]
 license = "MIT"
-description = "Library for parsing and communicating over Network Time Protocol."
-homepage = "https://apibill.me"
-repository = "https://github.com/apibillme/broker-ntp"
+description = "Async NTP"
+repository = "https://github.com/apibillme/nippy"
 readme = "README.md"
-keywords = ["protocol", "network", "time", "parser", "binary"]
+keywords = ["network", "time", "async", "ntp", "parser"]
 categories = ["date-and-time", "network-programming", "parser-implementations", "encoding"]
 
 [dependencies]
-byteorder = "1.1"
-conv = "0.3.2"
-custom_derive = "0.1.5"
-log = "0.3.6"
+async-std = { version = "1.9", features = ["attributes"] }
+byteorder = "1.4"
+conv = "0.3"
+custom_derive = "0.1"
+log = "0.4"
+anyhow = "1"
 
 [dev-dependencies]
-chrono = "0.4.4"
+chrono = "0.4"

@@ -1,6 +1,6 @@
-extern crate broker_ntp;
+extern crate nippy;
 
-use broker_ntp::protocol::{
+use nippy::protocol::{
     LeapIndicator, Mode, ShortFormat, PrimarySource, ReadBytes, Packet, ReferenceIdentifier,
     ConstPackedSizeBytes, Stratum, TimestampFormat, Version, WriteBytes,
 };
